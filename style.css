@@ -113,6 +113,10 @@ b {
   color: var(--color-success)
 }
 
+.dark {
+  color: var(--color-dark);
+}
+
 .warning {
   color: var(--color-warning);
 }
@@ -139,6 +143,8 @@ aside .toogle {
 aside .toogle .logo {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+  flex-direction: column;
 }
 
 aside .toogle .logo img {
@@ -210,16 +216,99 @@ aside .sidebar a.active span {
 
 aside .sidebar a:hover {
   color: var(--color-primary);
-  }
-  
-  aside .sidebar a:hover span {
-    margin-left: 0.6rem;
-    }
-    
-    aside .sidebar .messages-count {
-      background-color: var(--color-danger);
-      padding: 2px 6px;
-      color: var(--color-white);
-      font-size: 11px;
-      border-radius: var(--border-radius-1);
+}
+
+aside .sidebar a:hover span {
+  margin-left: 0.6rem;
+}
+
+aside .sidebar .messages-count {
+  background-color: var(--color-danger);
+  padding: 2px 6px;
+  color: var(--color-white);
+  font-size: 11px;
+  border-radius: var(--border-radius-1);
+}
+
+main {
+  margin-top: 1.4rem;
+}
+
+main .analise {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+main .analise>div {
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+main .analise>div:hover {
+  box-shadow: none;
+}
+
+main .analise>div .status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .analise h3 {
+  margin-left: 0.6rem;
+  font-size: 1rem;
+}
+
+main .analise .progresso {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+}
+
+main .analise svg {
+  width: 7rem;
+  height: 7rem;
+}
+
+main .analise svg circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+main .analise .vendas svg circle {
+  stroke: var(--color-success);
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .analise .acessos svg circle {
+  stroke: var(--color-danger);
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .analise .procuras svg circle {
+  stroke: var(--color-primary);
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+main .analise .progresso .porcentagem {
+  position: absolute;
+  top: -3px;
+  left: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
